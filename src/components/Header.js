@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const Header = () => (
   <>
     <nav className="navigation-bar d-flex">
-      <h1>Bookstore</h1>
+      <h2>Bookstore CMS</h2>
       <ul className="d-flex">
         <li>
-          <Link to="/" exact> BOOKS </Link>
+          <Link to="/"> BOOKS </Link>
         </li>
         <li>
           <Link to="/categories"> CATEGORIES </Link>

@@ -1,21 +1,27 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import BooksPage from '../redux/books/books';
+import { useSelector } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import BooksPage from './Homepage';
 import CategoriesPage from '../redux/categories/categories';
 import Header from './Header';
 
-const App = () => (
-  <>
-    <Header />
-    <Switch>
-      <Route exact path="/">
-        <BooksPage />
-      </Route>
-      <Route exact path="/categories">
-        <CategoriesPage />
-      </Route>
-    </Switch>
-  </>
-);
+const App = () => {
+  const { booksReducer } = useSelector((state) => state);
+  return (
+    <>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <BooksPage data={booksReducer} />
+          </Route>
+          <Route path="/categories">
+            <CategoriesPage />
+          </Route>
+        </Switch>
+      </Router>
+    </>
+  );
+};
 
 export default App;

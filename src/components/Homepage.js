@@ -1,5 +1,5 @@
 import AddBook from './Addbook';
-import IndividualBook from './booklist';
+import IndividualBook from './Booklist';
 
 const BooksPage = (prop) => {
   const { data } = prop;

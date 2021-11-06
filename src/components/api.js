@@ -24,8 +24,11 @@ export const addApiBook = async (book) => {
 };
 
 export const removeApiBook = async (id) => {
-  const response = await fetch(baseUrl, {
+  const response = await fetch(`${baseUrl}/${id}`, {
     method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({
       item_id: id,
     }),

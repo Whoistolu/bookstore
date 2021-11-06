@@ -10,7 +10,12 @@ const BooksPage = () => {
       <div className="books-container d-flex">
         <div>
           {booksReducer.map((book) => (
-            <IndividualBook key={book.id} title={book.title} author={book.author} id={book.id} />
+            <IndividualBook
+              key={book.id}
+              title={book.title}
+              category={book.category}
+              id={book.id}
+            />
           ))}
         </div>
       </div>

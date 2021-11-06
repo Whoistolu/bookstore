@@ -12,9 +12,12 @@ export const addBook = (payload) => ( async (dispatch) => {
     payload,
   })
 });
-export const removeBook = (payload) => ({
-  type: REMOVE_BOOK,
-  payload,
+export const removeBook = (payload) => (async (dispatch) => {
+  await removeApiBook(payload);
+  dispatch({
+    type: REMOVE_BOOK,
+    payload,
+  })
 });
 
 export const initializeBooks = () => (async (dispatch) => {

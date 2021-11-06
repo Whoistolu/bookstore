@@ -1,6 +1,9 @@
+/* eslint-disable */
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 import booksReducer from './books/books';
+import { initializeBooks } from './books/books';
 
 const reducer = combineReducers({
   booksReducer,
@@ -8,7 +11,9 @@ const reducer = combineReducers({
 
 const store = createStore(
   reducer,
-  applyMiddleware(logger),
+  applyMiddleware(logger, thunk),
 );
+
+store.dispatch(initializeBooks([1, 2, 3]));
 
 export default store;

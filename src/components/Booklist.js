@@ -11,9 +11,9 @@ const IndividualBook = (prop) => {
   return (
     <div className="book">
       <div className="title">
-        <h2>{title}</h2>
-        <h2>{category}</h2>
-        <h3>comments</h3>
+        <h2 className="category">{category}</h2>
+        <h2 className="title">{title}</h2>
+        <h3 className="author">Author</h3>
         <button type="button">Comments</button>
         <button type="button" onClick={() => removeBookFromStore(id)}>Remove</button>
         <button type="button">Edit</button>
@@ -34,7 +34,7 @@ const IndividualBook = (prop) => {
           Current Chapter
         </span>
         <h3>CHAPTER 17</h3>
-        <button type="button">Update Progress</button>
+        <button type="button">UPDATE PROGRESS</button>
       </div>
     </div>
   );

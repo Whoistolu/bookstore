@@ -14,6 +14,18 @@
   --White: #fff;
 }
 
+body {
+  font-family: "Roboto Slab", sans-serif;
+}
+
+button {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 div#root {
   background-color: #fafafa;
 }
@@ -82,22 +94,55 @@ div#root {
   padding: 0.2rem;
   border: solid 1px var(--OffWhite);
   border-radius: 50%;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .book {
   display: flex;
   justify-content: space-between;
-
-  /* width: 100%; */
+  border: 1px solid #e8e8e8;
   background-color: #fff;
   padding: 2rem;
   margin: 0 4rem;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.chapter button {
+  border-radius: 3px;
+  background-color: #0290ff;
+  padding: 1rem;
+  color: #fff;
+  border: transparent;
+}
+
+.book .title button {
+  background-color: transparent;
+  color: #0290ff;
+  padding: 0.5em;
+  padding-inline: 0;
+  font-size: 0.875rem;
+  padding-right: 0.8em;
+}
+
+.book .category {
+  background-color: transparent;
+  font-size: 1em;
+  color: gray;
+  padding-inline: 0;
+}
+
+.book .author {
+  color: #0290ff;
+  font-weight: normal;
+  font-size: 0.875rem;
 }
 
 .books-container {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .load {
@@ -106,7 +151,11 @@ div#root {
 }
 
 .load span {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
+}
+
+.load span:nth-child(1) {
+  font-size: 2rem;
 }
 
 .load1 {
@@ -126,16 +175,8 @@ div#root {
   margin-right: 5rem;
 }
 
-.chapter button {
-  border-radius: 3px;
-  background-color: #0290ff;
-  padding: 1rem;
-  color: #fff;
-  border: transparent;
-}
-
 .chapter h3 {
-  font-family: RobotoSlab;
+  font-family: "Roboto Slab", sans-serif;
   font-size: 1rem;
   font-weight: 300;
   font-stretch: normal;

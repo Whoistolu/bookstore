@@ -23,23 +23,27 @@ const AddBook = () => {
 
   return (
     <form onSubmit={submitBookToStore} className="form-container">
-      <input
-        type="text"
-        name="title"
-        id="title"
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}
-        placeholder="Book Title"
-      />
-      <input
-        type="text"
-        name="category"
-        id="category"
-        onChange={(e) => setCategory(e.target.value)}
-        value={category}
-        placeholder="Book Category"
-      />
-      <button type="submit">Add Books</button>
+      <h3>ADD NEW BOOK</h3>
+      <div className="form-inputs">
+        <input
+          type="text"
+          name="title"
+          id="title"
+          onChange={(e) => setTitle(e.target.value)}
+          value={title}
+          placeholder="Book Title"
+        />
+        <input
+          type="text"
+          name="category"
+          id="books-categories"
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+          placeholder="Book Category"
+        />
+        <button className="submit-btn" type="submit">Add Books</button>
+      </div>
+
     </form>
   );
 };

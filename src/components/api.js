@@ -20,7 +20,7 @@ export const addApiBook = async (book) => {
       category: book.category,
     }),
   });
-  console.log(await response.text());
+  (await response.text());
 };
 
 export const removeApiBook = async (id) => {
@@ -33,5 +33,5 @@ export const removeApiBook = async (id) => {
       item_id: id,
     }),
   });
-  console.log(await response.text());
+  (await response.text());
 };

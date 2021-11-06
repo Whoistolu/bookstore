@@ -8,16 +8,16 @@ const BooksPage = () => {
   return (
     <>
       <div className="books-container d-flex">
-        <div>
-          {booksReducer.map((book) => (
-            <IndividualBook
-              key={book.id}
-              title={book.title}
-              category={book.category}
-              id={book.id}
-            />
-          ))}
-        </div>
+
+        {booksReducer.map((book) => (
+          <IndividualBook
+            key={book.id}
+            title={book.title}
+            category={book.category}
+            id={book.id}
+          />
+        ))}
+
       </div>
       <AddBook />
     </>

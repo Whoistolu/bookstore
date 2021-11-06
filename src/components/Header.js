@@ -16,7 +16,6 @@ const Header = () => (
       </ul>
     </div>
     <CgProfile />
-    ;
   </nav>
 );
 export default Header;

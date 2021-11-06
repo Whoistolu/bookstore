@@ -1,7 +1,9 @@
+/* eslint-disable */
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const INITIALIZE_BOOKS = 'bookStore/books/INITIALIZE_BOOKS';
 const initialState = [];
+import { fetchApiBooks, addApiBook, removeApiBook } from "../../components/api";
 
 export const addBook = (payload) => ({
   type: ADD_BOOK,
@@ -12,9 +14,17 @@ export const removeBook = (payload) => ({
   payload,
 });
 
-export const initializeBooks = (payload) => ({
-  type: INITIALIZE_BOOKS,
-  payload,
+export const initializeBooks = () => (async (dispatch) => {
+  const books = await fetchApiBooks();
+  const data = Object.entries(books).map(([itemId, [book]]) => ({
+    id: itemId,
+    title: book.title,
+    category: book.category,
+  }));
+  dispatch({
+    type: INITIALIZE_BOOKS,
+    payload: data,
+  });
 });
 
 const reducer = (state = initialState, action) => {

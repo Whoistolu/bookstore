@@ -5,9 +5,12 @@ const INITIALIZE_BOOKS = 'bookStore/books/INITIALIZE_BOOKS';
 const initialState = [];
 import { fetchApiBooks, addApiBook, removeApiBook } from "../../components/api";
 
-export const addBook = (payload) => ({
-  type: ADD_BOOK,
-  payload,
+export const addBook = (payload) => ( async (dispatch) => {
+  await addApiBook(payload);
+  dispatch({
+    type: ADD_BOOK,
+    payload,
+  })
 });
 export const removeBook = (payload) => ({
   type: REMOVE_BOOK,

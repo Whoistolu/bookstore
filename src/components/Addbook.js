@@ -14,7 +14,7 @@ const AddBook = () => {
     const newBook = {
       id: uuidv4(),
       title,
-      author,
+      category: author,
     };
     dispatch(addBook(newBook));
     setTitle('');

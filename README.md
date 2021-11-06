@@ -4,7 +4,7 @@ A web app book library that allows you add and and remove books
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-![screenshot](img/crud.png)
+![screenshot](img/api.png)
 
 ## Built With
 
